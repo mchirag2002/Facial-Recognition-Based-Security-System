@@ -1,0 +1,1 @@
+board = Arduino('COM3')
