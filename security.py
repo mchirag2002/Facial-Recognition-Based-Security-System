@@ -5,12 +5,15 @@ import pyfirmata
 from pyfirmata import Arduino
 import time
 import os
+from datetime import datetime
 
 board = Arduino('COM3')
 face_cascade = cv2.CascadeClassifier(
     'cascades/data/haarcascade_frontalface_alt2.xml')
 video_capture = cv2.VideoCapture(0)
 
+
+log = 'E:\PROJECTS\FACIAL RECOGNITION\logs.txt'
 
 path = 'E:\PROJECTS\FACIAL RECOGNITION\Database'
 peopleImg = []
@@ -91,6 +94,11 @@ while True:
                     roi_gray = gray[y:y+h, x:x+h]
                     img_item = "unknown person.png"
                     cv2.imwrite(img_item, roi_gray)
+            else:
+                now = datetime.now()
+                entry = name + " entered the proximity at " + now
+                with open(log, 'a') as f:
+                    f.writelines('\n'.join(entry))
 
     process_this_frame = not process_this_frame
 
