@@ -19,5 +19,5 @@ The project was made as a security solution using Facial Recognition to detect t
 - Install all the dependencies mentioned
 - Connect your Arduino board to the computer and note the serial port
 - Check and verify the serial port if it is COM3, if not then change the port in security.py file
-- Place the high resolution pictures of all the authorized personel in the database folder
+- Place the high resolution pictures of all the authorized personnel in the database folder
 - Run the security.py file
